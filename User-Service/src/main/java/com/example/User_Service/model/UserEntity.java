@@ -14,8 +14,10 @@ public class UserEntity {
 
     private String name;
     private String email;
+    private String phone;
 
-
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private AddressEntity address;
 
 }
